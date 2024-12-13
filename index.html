@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <img src="https://static.vecteezy.com/system/resources/previews/010/994/485/non_2x/premier-league-logo-symbol-with-name-white-design-england-football-european-countries-football-teams-illustration-with-black-background-free-vector.jpg" alt="Premier League Logo" style="height: 300px;">
+</header>
+
+<!-- Upcoming Matches Section -->
+<section id="upcoming-matches">
+    <h2>Upcoming Matches</h2>
+    <table>
+        <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        <tr onclick="openModal('Team A vs Team B')">
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" alt="Team A Logo" style="height: 30px; vertical-align: middle;">
+                Arsenal
+            </td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Everton_FC_logo.svg/1200px-Everton_FC_logo.svg.png" alt="Team B Logo" style="height: 30px; vertical-align: middle;">
+                Everton
+            </td>
+            <td>2024-12-14</td>
+            <td>10:00</td>
+        </tr>
+        <tr onclick="openModal('Team C vs Team D')">
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt="Team C Logo" style="height: 30px; vertical-align: middle;">
+                Liverpool
+            </td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Fulham_FC_%28shield%29.svg/1200px-Fulham_FC_%28shield%29.svg.png" alt="Team D Logo" style="height: 30px; vertical-align: middle;">
+                Fulham
+            </td>
+            <td>2024-12-14</td>
+            <td>10:00</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Premier League Table Section -->
+<section id="league-table">
+    <h2>Premier League Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Club</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-url="https://www.liverpoolfc.com/" onclick="navigateToUrl(event)">
+                <td>1</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" 
+                         alt="Liverpool Logo" class="team-logo"> Liverpool
+                </td>
+                <td>14</td><td>11</td><td>2</td><td>1</td><td>35</td><td>18</td><td>+17</td><td>35</td>
+            </tr>
+            <tr data-url="https://www.chelseafc.com/en" onclick="navigateToUrl(event)">
+                <td>2</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" 
+                         alt="Chelsea Logo" class="team-logo"> Chelsea
+                </td>
+                <td>15</td><td>9</td><td>4</td><td>2</td><td>35</td><td>18</td><td>+17</td><td>31</td>
+            </tr>
+            <tr data-url="https://www.arsenal.com/" onclick="navigateToUrl(event)">
+                <td>3</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" 
+                         alt="Arsenal Logo" class="team-logo"> Arsenal
+                </td>
+                <td>15</td><td>8</td><td>5</td><td>2</td><td>29</td><td>15</td><td>+14</td><td>29</td>
+            </tr>
+            <tr data-url="https://www.mancity.com/" onclick="navigateToUrl(event)">
+                <td>4</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" 
+                         alt="Manchester City Logo" class="team-logo"> Manchester City
+                </td>
+                <td>15</td><td>8</td><td>3</td><td>4</td><td>27</td><td>21</td><td>+6</td><td>27</td>
+            </tr>
+            <tr data-url="https://www.nottinghamforest.co.uk/" onclick="navigateToUrl(event)">
+                <td>5</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg" 
+                         alt="Nottingham Forest Logo" class="team-logo"> Nottingham Forest
+                </td>
+                <td>15</td><td>7</td><td>4</td><td>4</td><td>25</td><td>19</td><td>+6</td><td>25</td>
+            </tr>
+            <tr data-url="https://www.avfc.co.uk/" onclick="navigateToUrl(event)">
+                <td>6</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Aston_Villa_FC_new_crest.svg" 
+                         alt="Aston Villa Logo" class="team-logo"> Aston Villa
+                </td>
+                <td>15</td><td>7</td><td>4</td><td>4</td><td>23</td><td>23</td><td>0</td><td>25</td>
+            </tr>
+            <tr data-url="https://www.brightonandhovealbion.com/pages/en/home" onclick="navigateToUrl(event)">
+                <td>7</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Brighton_and_Hove_Albion_FC_crest.svg" 
+                         alt="Brighton Logo" class="team-logo"> Brighton
+                </td>
+                <td>15</td><td>6</td><td>6</td><td>3</td><td>25</td><td>22</td><td>+3</td><td>24</td>
+            </tr>
+            <tr data-url="https://www.afcb.co.uk/" onclick="navigateToUrl(event)">
+                <td>8</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg" 
+                         alt="Bournemouth Logo" class="team-logo"> Bournemouth
+                </td>
+                <td>15</td><td>7</td><td>3</td><td>5</td><td>23</td><td>20</td><td>+3</td><td>24</td>
+            </tr>
+            <tr data-url="https://www.brentfordfc.com/en" onclick="navigateToUrl(event)">
+                <td>9</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg" 
+                         alt="Brentford Logo" class="team-logo"> Brentford
+                </td>
+                <td>15</td><td>7</td><td>2</td><td>6</td><td>31</td><td>28</td><td>+3</td><td>23</td>
+            </tr>
+            <tr data-url="https://www.fulhamfc.com/" onclick="navigateToUrl(event)">
+                <td>10</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg" 
+                         alt="Fulham Logo" class="team-logo"> Fulham
+                </td>
+                <td>15</td><td>6</td><td>5</td><td>4</td><td>22</td><td>20</td><td>+2</td><td>23</td>
+            </tr>
+            <tr data-url="https://www.tottenhamhotspur.com/" onclick="navigateToUrl(event)">
+                <td>11</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg" 
+                         alt="Tottenham Logo" class="team-logo"> Tottenham
+                </td>
+                <td>15</td><td>6</td><td>2</td><td>7</td><td>31</td><td>19</td><td>+12</td><td>20</td>
+            </tr>
+            <tr data-url="https://www.newcastleunited.com/en" onclick="navigateToUrl(event)">
+                <td>12</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg" 
+                         alt="Newcastle Logo" class="team-logo"> Newcastle
+                </td>
+                <td>15</td><td>5</td><td>5</td><td>5</td><td>19</td><td>21</td><td>-2</td><td>20</td>
+            </tr>
+            <tr data-url="https://www.manutd.com/" onclick="navigateToUrl(event)">
+                <td>13</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" 
+                         alt="Manchester United Logo" class="team-logo"> Manchester United
+                </td>
+                <td>15</td><td>6</td><td>3</td><td>6</td><td>18</td><td>19</td><td>-1</td><td>20</td>
+            </tr>
+            <tr data-url="https://www.whufc.com/" onclick="navigateToUrl(event)">
+                <td>14</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg" 
+                         alt="West Ham Logo" class="team-logo"> West Ham
+                </td>
+                <td>15</td><td>5</td><td>3</td><td>7</td><td>20</td><td>28</td><td>-8</td><td>18</td>
+            </tr>
+            <tr data-url="https://www.evertonfc.com/home" onclick="navigateToUrl(event)">
+                <td>15</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg" 
+                         alt="Everton Logo" class="team-logo"> Everton
+                </td>
+                <td>14</td><td>3</td><td>5</td><td>6</td><td>14</td><td>21</td><td>-7</td><td>14</td>
+            </tr>
+            <tr data-url="https://www.lcfc.com/pages/en/home" onclick="navigateToUrl(event)">
+                <td>16</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg" 
+                         alt="Leicester City Logo" class="team-logo"> Leicester City
+                </td>
+                <td>15</td><td>3</td><td>5</td><td>7</td><td>21</td><td>30</td><td>-9</td><td>14</td>
+            </tr>
+            <tr data-url="https://www.cpfc.co.uk/" onclick="navigateToUrl(event)">
+                <td>17</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg" 
+                         alt="Crystal Palace Logo" class="team-logo"> Crystal Palace
+                </td>
+                <td>15</td><td>2</td><td>7</td><td>6</td><td>14</td><td>20</td><td>-6</td><td>13</td>
+            </tr>
+            <tr data-url="https://www.itfc.co.uk/" onclick="navigateToUrl(event)">
+                <td>18</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg" 
+                         alt="Ipswich Town Logo" class="team-logo"> Ipswich Town
+                </td>
+                <td>15</td><td>1</td><td>6</td><td>8</td><td>14</td><td>27</td><td>-13</td><td>9</td>
+            </tr>
+            <tr data-url="https://www.wolves.co.uk/" onclick="navigateToUrl(event)">
+                <td>19</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c9/Wolverhampton_Wanderers_FC_crest.svg" 
+                         alt="Wolves Logo" class="team-logo"> Wolves
+                </td>
+                <td>15</td><td>2</td><td>3</td><td>10</td><td>23</td><td>38</td><td>-15</td><td>9</td>
+            </tr>
+            <tr data-url="https://www.southamptonfc.com/en" onclick="navigateToUrl(event)">
+                <td>20</td>
+                <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg" 
+                         alt="Southampton Logo" class="team-logo"> Southampton
+                </td>
+                <td>15</td><td>1</td><td>2</td><td>12</td><td>5</td><td>31</td><td>-26</td><td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+   <!-- Top Goal Scorer Section -->
+<section id="top-scorer">
+    <h2>Top Goal Scorer</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-url="https://www.espn.com/soccer/player/_/id/173896/mohamed-salah" onclick="navigateToUrl(event)">
+                <td>1</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png" 
+                         alt="Salah Logo" class="player-photo"> Mohamed Salah
+                </td>
+                <td>Liverpool</td>
+                <td>13</td>
+            </tr>
+            <tr data-url="https://www.espn.com/soccer/player/_/id/296395/cole-palmer" onclick="navigateToUrl(event)">
+                <td>2</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p244851.png" 
+                         alt="Palmer Logo" class="player-photo"> Cole Palmer
+                </td>
+                <td>Chelsea</td>
+                <td>11</td>
+            </tr>
+            <tr data-url="https://www.espn.com/soccer/player/_/id/134190/chris-wood" onclick="navigateToUrl(event)">
+                <td>3</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p60689.png" 
+                         alt="Wood Logo" class="player-photo"> Chris Wood
+                </td>
+                <td>Nottm Forest</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Top Assists Section -->
+<section id="top-assists">
+    <h2>Top Assists</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Assists</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-url="https://www.espn.com/soccer/player/_/id/134947/kevin-de-bruyne" onclick="navigateToUrl(event)">
+                <td>1</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p61366.png" 
+                         alt="De Bruyne Logo" class="player-photo"> Kevin De Bruyne
+                </td>
+                <td>Manchester City</td>
+                <td>10</td>
+            </tr>
+            <tr data-url="https://www.espn.com/soccer/player/_/id/280555/bukayo-saka" onclick="navigateToUrl(event)">
+                <td>2</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p223340.png" 
+                         alt="Saka Logo" class="player-photo"> Bukayo Saka
+                </td>
+                <td>Arsenal</td>
+                <td>9</td>
+            </tr>
+            <tr data-url="https://www.espn.com/soccer/player/stats/_/id/124091/bruno-fernandes" onclick="navigateToUrl(event)">
+                <td>3</td>
+                <td>
+                    <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p141746.png" 
+                         alt="Fernandes Logo" class="player-photo"> Bruno Fernandes
+                </td>
+                <td>Manchester United</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
